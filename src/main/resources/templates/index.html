@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+</head>
+<body>
+<h1>MY VIDEOGAME LIST UwU</h1>
+<a href="/dades/new">Add videogames</a><br/>
+<a href="/dades/list">Videogame List</a><br/>
+<form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+  <input type="submit" value="Logout" />
+</form>
+<a href="javascript:document.logoutForm.submit()">Logout</a>
+</body>
+</html>

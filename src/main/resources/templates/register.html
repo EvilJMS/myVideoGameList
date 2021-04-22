@@ -1,0 +1,21 @@
+<!-- plantilla afegir.html -->
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register New User</title>
+</head>
+<body>
+<!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
+<form method="post" action="#" th:action="@{/register/add}" th:object="${userForm}">
+    <!-- si el id == 0 és la primera vegada que utilitzo el form, per tant new Empleat -->
+    <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
+
+    <h1>Register</h1>
+    Username <input type="text" id="username" placeholder="username" th:field="*{username}"><br/>
+    Password <input type="text" id="genre" placeholder="Genre" th:field="*{password}"><br/>
+    Confirm Password <input type="text" id="confirmPassword" placeholder="PS4"><br/>
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>

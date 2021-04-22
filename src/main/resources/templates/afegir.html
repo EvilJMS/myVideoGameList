@@ -1,0 +1,26 @@
+<!-- plantilla afegir.html -->
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Update Videogame</title>
+</head>
+<body>
+<!--<form method="post" action="#" th:action="@{/empleats/new/submit}" th:object="${empleatForm}">-->
+<form method="post" action="#" th:action="${videogameForm.id!=0} ?@{/dades/edit/submit}:@{/dades/new/submit}" th:object="${videogameForm}">
+    <!-- si el id == 0 és la primera vegada que utilitzo el form, per tant new Empleat -->
+    <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
+
+    <h1 th:text="${videogameForm.id!=0}?'Edit videogame': 'New videogame'">UwU</h1>
+    Id <input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${videogameForm.id!=0}?'readonly':null"><br/>
+    Title <input type="text" id="title" placeholder="Title" th:field="*{title}"><br/>
+    Genre <input type="text" id="genre" placeholder="Genre" th:field="*{genre}"><br/>
+    Platform <input type="text" id="platform" placeholder="PS4" th:field="*{platform}"><br/>
+    Score <input type="text" id="score" th:field="*{score}"><br/>
+    Desc. <input type="text" id="desc" th:field="*{shortDescription}"><br/>
+    <button type="submit">Enviar</button>
+</form>
+<br>
+<a href="/">Go back</a>
+</body>
+</html>
