@@ -30,7 +30,7 @@ public class ConfiguracioSeguretatWeb extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/dades/list","/register","/register/add","/h2-console/**").permitAll()
+                .antMatchers("/webjars/**", "/css/**","/dades/list","/register","/register/add","/h2-console/**").permitAll()
                 .antMatchers("/dades/new","/dades/edit/{id}","dades/eliminar/{id}").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
